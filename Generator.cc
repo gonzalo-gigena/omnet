@@ -16,7 +16,7 @@ public:
 protected:
     virtual void initialize();
     virtual void finish();
-    virtual void handleMessage(cPacket *msg);
+    virtual void handleMessage(cMessage *msg);
 };
 Define_Module(Generator);
 
@@ -40,13 +40,14 @@ void Generator::initialize() {
 void Generator::finish() {
 }
 
-void Generator::handleMessage(cPacket *msg) {
+void Generator::handleMessage(cMessage *msg) {
 
     // create new packet
     cPacket *pkt = new cPacket("packet");
 
     // change packet size
-    pkt->setByteLength(par("packetByteSize"));
+    // causes an error
+    pkt->setByteLength(200);
 
     // send to the output
     send(pkt, "out");

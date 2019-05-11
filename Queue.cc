@@ -19,7 +19,7 @@ public:
 protected:
     virtual void initialize();
     virtual void finish();
-    virtual void handleMessage(cPacket *msg);
+    virtual void handleMessage(cMessage *msg);
 };
 
 Define_Module(Queue);
@@ -44,8 +44,8 @@ void Queue::initialize() {
 void Queue::finish() {
 }
 
-void Queue::handleMessage(cPacket *msg) {
-
+void Queue::handleMessage(cMessage *msg) {
+    // causes an error
     if( buffer.getLength() >= par("bufferSize").longValue() ){
 
         delete msg;
