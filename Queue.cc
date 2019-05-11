@@ -46,13 +46,7 @@ void Queue::finish() {
 
 void Queue::handleMessage(cMessage *msg) {
     // causes an error
-    if( buffer.getLength() >= par("bufferSize").longValue() ){
-
-        delete msg;
-        this->bubble("packet dropped");
-        packetDropVector.record(1);
-
-    }else if (msg == endServiceEvent) {
+    if (msg == endServiceEvent) {
         // if packet in buffer, send next one
         if (!buffer.isEmpty()) {
             // dequeue packet
@@ -63,7 +57,13 @@ void Queue::handleMessage(cMessage *msg) {
             serviceTime = pkt->getDuration();
             scheduleAt(simTime() + serviceTime, endServiceEvent);
         }
-    }  else {
+    } else if( buffer.getLength() >= par("bufferSize").longValue() ){
+
+        delete msg;
+        this->bubble("packet dropped");
+        packetDropVector.record(1);
+
+    } else {
 
         buffer.insert(msg);
         bufferSizeVector.record(buffer.getLength());
