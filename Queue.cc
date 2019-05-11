@@ -49,7 +49,7 @@ void Queue::handleMessage(cMessage *msg) {
             // send packet
             send(pkt, "out");
             // start new service
-            serviceTime = par("serviceTime");
+            serviceTime = pkt->getDuration();
             scheduleAt(simTime() + serviceTime, endServiceEvent);
         }
     } else { // if msg is a data packet

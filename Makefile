@@ -1,12 +1,12 @@
 #
-# OMNeT++/OMNEST Makefile for redes19lab3g20
+# OMNeT++/OMNEST Makefile for lab3-kickstarter
 #
 # This file was generated with the command:
 #  opp_makemake -f --deep -O out -I.
 #
 
 # Name of target to be created (-o option)
-TARGET = redes19lab3g20$(D)$(EXE_SUFFIX)
+TARGET = lab3-kickstarter$(D)$(EXE_SUFFIX)
 TARGET_DIR = .
 
 # User interface (uncomment one) (-u option)
