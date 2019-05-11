@@ -47,7 +47,7 @@ void Generator::handleMessage(cMessage *msg) {
 
     // change packet size
     // causes an error
-    pkt->setByteLength(200);
+    pkt->setByteLength(par("packetByteSize"));
 
     // send to the output
     send(pkt, "out");
