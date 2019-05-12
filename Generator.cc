@@ -32,7 +32,7 @@ Generator::~Generator() {
 void Generator::initialize() {
     transmissionStats.setName("TotalTransmissions");
     // create the send packet
-    sendMsgEvent = new cPacket("sendEvent");
+    sendMsgEvent = new cMessage("sendEvent");
     // schedule the first event at random time
     scheduleAt(par("generationInterval"), sendMsgEvent);
 }
