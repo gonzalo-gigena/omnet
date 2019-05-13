@@ -8,7 +8,7 @@ using namespace omnetpp;
 
 class Generator : public cSimpleModule {
 private:
-    cMessage *sendMsgEvent;
+    cPacket *sendMsgEvent;
     cStdDev transmissionStats;
 public:
     Generator();
@@ -32,7 +32,7 @@ Generator::~Generator() {
 void Generator::initialize() {
     transmissionStats.setName("TotalTransmissions");
     // create the send packet
-    sendMsgEvent = new cMessage("sendEvent");
+    sendMsgEvent = new cPacket("sendEvent");
     // schedule the first event at random time
     scheduleAt(par("generationInterval"), sendMsgEvent);
 }
