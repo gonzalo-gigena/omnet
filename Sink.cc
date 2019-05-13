@@ -29,6 +29,7 @@ Sink::~Sink() {
 
 void Sink::initialize(){
     // stats and vector names
+    EV << "Hello Sink\n";
     delayStats.setName("TotalDelay");
     delayVector.setName("Delay");
 }

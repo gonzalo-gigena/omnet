@@ -22,7 +22,6 @@ Define_Module(Generator);
 
 Generator::Generator() {
     sendMsgEvent = NULL;
-
 }
 
 Generator::~Generator() {
@@ -30,6 +29,7 @@ Generator::~Generator() {
 }
 
 void Generator::initialize() {
+    EV << "Hello\n";
     transmissionStats.setName("TotalTransmissions");
     // create the send packet
     sendMsgEvent = new cPacket("sendEvent");
@@ -44,11 +44,7 @@ void Generator::handleMessage(cMessage *msg) {
 
     // create new packet
     cPacket *pkt = new cPacket("packet");
-
-    // change packet size
-    // causes an error
     pkt->setByteLength(par("packetByteSize"));
-
     // send to the output
     send(pkt, "out");
 

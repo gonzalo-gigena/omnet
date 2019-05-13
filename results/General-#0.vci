@@ -1,32 +1,38 @@
-file 8062938 1557545734                                         
+file 170096 1557764211                                          
 version 2
-run General-0-20190511-00:35:30-2418
+run General-0-20190513-13:16:19-9925
 attr configname General
-attr datetime 20190511-00:35:30
+attr datetime 20190513-13:16:19
 attr experiment General
 attr inifile omnetpp.ini
 attr iterationvars ""
 attr iterationvarsf ""
 attr measurement ""
 attr network Network
-attr processid 2418
+attr processid 9925
 attr repetition 0
 attr replication #0
 attr resultdir results
 attr runnumber 0
 attr seedset 0
-param Network.gen.generationInterval exponential(0.001)
-param Network.nodeTx.gen.generationInterval exponential(0.001)
-param Network.nodeRx.queue.serviceTime exponential(0.001)
-param Network.nodeTx.queue.serviceTime exponential(0.001)
-param Network.queue.serviceTime exponential(0.001)
+param Network.gen.generationInterval exponential(0.1)
+param Network.nodeTx.gen.generationInterval exponential(0.1)
+param Network.nodeRx.queue.serviceTime exponential(0.1)
+param Network.nodeTx.queue.serviceTime exponential(0.1)
+param Network.queue.serviceTime exponential(0.1)
+param Network.nodeTx.gen.packetByteSize 12500
+param Network.queue.bufferSize 200
+param Network.nodeRx.queue.bufferSize 200
+param Network.nodeTx.queue.bufferSize 2000000
 
-vector 0 Network.nodeRx.sink Delay ETV
-0	677 1279885 8 265466 0.000995874505 33.17838820916 32768 0.0002 0.72945399496 12097.183011273 6223.5639330995
-0	1280562 1303290 265468 530921 33.178405389967 66.553213820838 32768 0.694616075225 1.500017092988 39352.128647948 48804.618066635
-0	2583852 1303556 530923 793764 66.554736485583 99.502080777515 32768 1.446837171731 1.748539379196 50957.471964208 79405.603301298
-0	3887408 1342547 793772 1055210 99.502575784335 132.039075385836 32768 1.411406827906 1.699563855562 50623.099765287 78332.082343306
-0	5229955 1369026 1055223 1317334 132.040096838512 164.77017550832 32768 1.349210172145 1.755564775031 50462.804651965 78005.91930655
-0	6598981 1368929 1317342 1580707 164.771589802698 197.714017876498 32768 1.686676707438 2.030410602937 60279.385135044 111136.86379372
-0	7967910 95027 1580713 1598740 197.715062489429 199.999561072307 2275 1.837226822738 1.939272688444 4304.6641918946 8145.9255593645
+vector 0 Network.nodeTx.queue "Buffer Size" ETV
+vector 1 Network.queue "Buffer Size" ETV
+vector 2 Network.nodeRx.queue "Buffer Size" ETV
+vector 3 Network.nodeRx.sink Delay ETV
+vector 4 Network.queue "Packets Lost" ETV
+0	1015 51626 2 12930 0.079587450457 199.995645792347 1979 1 33 25871 472807
+1	52641 32595 7 12921 0.179687450457 199.874681545182 1199 1 200 197981 36886541
+2	85236 25569 15 12927 0.379787450457 199.979787450457 999 1 1 999 999
+3	110805 39307 19 12922 0.479787450457 199.879787450457 998 0.4002 43.505080820183 32813.709898024 1244163.289656
+4	150112 19983 2756 12925 42.881753423165 199.974681545182 771 1 1 771 771
 
