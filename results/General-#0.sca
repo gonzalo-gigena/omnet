@@ -1,21 +1,21 @@
 version 2
-run General-0-20190513-13:16:19-9925
+run General-0-20190514-00:49:57-16959
 attr configname General
-attr datetime 20190513-13:16:19
+attr datetime 20190514-00:49:57
 attr experiment General
 attr inifile omnetpp.ini
 attr iterationvars ""
 attr iterationvarsf ""
 attr measurement ""
 attr network Network
-attr processid 9925
+attr processid 16959
 attr repetition 0
 attr replication #0
 attr resultdir results
 attr runnumber 0
 attr seedset 0
 param Network.gen.generationInterval exponential(0.1)
-param Network.nodeTx.gen.generationInterval exponential(0.1)
+param Network.nodeTx.gen.generationInterval exponential(0.15)
 param Network.nodeRx.queue.serviceTime exponential(0.1)
 param Network.nodeTx.queue.serviceTime exponential(0.1)
 param Network.queue.serviceTime exponential(0.1)
@@ -24,6 +24,6 @@ param Network.queue.bufferSize 200
 param Network.nodeRx.queue.bufferSize 200
 param Network.nodeTx.queue.bufferSize 2000000
 
-scalar Network.nodeRx.sink "Avg delay" 32.879468835695
+scalar Network.nodeRx.sink "Avg delay" 23.628424949792
 scalar Network.nodeRx.sink "Number of packets" 998
 

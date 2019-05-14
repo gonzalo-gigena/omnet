@@ -29,7 +29,6 @@ Generator::~Generator() {
 }
 
 void Generator::initialize() {
-    EV << "Hello\n";
     transmissionStats.setName("TotalTransmissions");
     // create the send packet
     sendMsgEvent = new cPacket("sendEvent");
