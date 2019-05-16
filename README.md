@@ -20,3 +20,6 @@ Luego de analizar estos tres intervalos, nos damos cuenta que tenemos un problem
 A medida que el intervalo de generacion aumentaba se producia una mejora de porcentaje de paquetes que podia procesar el receptor, pero a costa de enviar menos cantidad de paquetes. 
 
 ![chart](./images/chart.jpeg)
+
+
+## Caso de estudio 2

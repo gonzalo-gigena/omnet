@@ -66,10 +66,10 @@ module NodeRx
     connections:
         in --> queue.in;
         //case study 1:
-        queue.out --> {datarate = 0.5Mbps; } -->sink.in;
+        //queue.out --> {datarate = 0.5Mbps; } -->sink.in;
         
         //case study 2:
-        //queue.out --> {datarate = 1Mbps; } -->sink.in;        
+        queue.out --> {datarate = 1Mbps; } -->sink.in;        
 }
 
 network Network
