@@ -27,6 +27,7 @@ Con la existencia de las computadoras surgió la necesidad de compartir informac
 
 Por lo que en este análisis abarcaremos como tratar los diversos conflictos (control de flujo y congestion) que pueden aparecer en la comunicacion de una red siemple diseñada y simulada en Omnet++.
 
+
 Se simularan varios casos de estudio y obtendrán
 conclusiones sobre el comportamiento de la red.
 
