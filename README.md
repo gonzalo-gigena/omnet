@@ -23,7 +23,15 @@
 ## Resumen
 
 ## Introducción
-Explicar las diferentes casos de estudio que vamos a tratar y con que programa.
+Con la existencia de las computadoras surgió la necesidad de compartir informacion entre las mismas. Como consecuncia surgieron multiples redes de diferentes tecnologias, tamaños (entre otros) para lograrlo.
+
+Por lo que en este análisis abarcaremos como tratar los diversos conflictos (control de flujo y congestion) que pueden aparecer en la comunicacion de una red siemple diseñada y simulada en Omnet++.
+
+Se simularan varios casos de estudio y obtendrán
+conclusiones sobre el comportamiento de la red.
+
+## Análisis del comportamiento la red basado en el tamaño sus colas
+Explicar como esta conformada la red y dar datos importantes como el tamaño de los buffers de las respectivas colas.
 
 ## Análisis del comportamiento la red basado en el tamaño sus colas
 Explicar como esta conformada la red y dar datos importantes como el tamaño de los buffers de las respectivas colas.
