@@ -23,18 +23,15 @@
 ## Resumen
 
 ## Introducción
-Con la existencia de las computadoras surgió la necesidad de compartir informacion entre las mismas. Como consecuncia surgieron multiples redes de diferentes tecnologias, tamaños (entre otros) para lograrlo.
-
-Por lo que en este análisis abarcaremos como tratar los diversos conflictos (control de flujo y congestion) que pueden aparecer en la comunicacion de una red siemple diseñada y simulada en Omnet++.
+Con la existencia de las computadoras surgió la necesidad de compartir informacion entre las mismas, como consecuncia surgieron multiples redes de diferentes tecnologias, tamaños (entre otros) para lograrlo. Por lo que en este análisis abarcaremos como tratar los diversos conflictos (control de flujo y congestion) que pueden aparecer en la comunicacion de una red siemple diseñada y simulada en Omnet++.
 
 Se simularan varios casos de estudio y obtendrán
 conclusiones sobre el comportamiento de la red.
 
-## Análisis del comportamiento la red basado en el tamaño sus colas
-Explicar como esta conformada la red y dar datos importantes como el tamaño de los buffers de las respectivas colas.
 
-## Análisis del comportamiento la red basado en el tamaño sus colas
-Explicar como esta conformada la red y dar datos importantes como el tamaño de los buffers de las respectivas colas.
+## Estructura de la red
+Trabajaremos con una red constituida por tres modulos. Un nodoTx contiene por un generador y una cola, llamada cola de nodoTx. Un nodoRx formado por un sink y una cola, llamada cola del nodoRx.
+Ambos nodos estan conectados por un camino de una sola mano desde el NodoTx al NodoRx, el nodo que los conecta es otra cola que llamaremos cola de datos.
 
 ### Caso de estudio 1
 
@@ -62,7 +59,7 @@ Por ultimo, al cambiar el intervalo a **intervalo a exponential(0.175)** vemos q
 
 Luego de haber analizado este caso, se ve claramente que tenemos un problema de congestión, causado por un cuello de botella en la Queue, ya que procesa muy lento los paquetes que recibe, esto causa que se llene su buffer.
 
-![chart](./images/chart.jpeg)
+![chart](./images/default/chart.jpeg)
 
 #### Fig 1. Ilustracion de estadisticas
 
