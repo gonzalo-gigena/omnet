@@ -8,6 +8,7 @@ using namespace omnetpp;
 
 class Queue: public cSimpleModule {
 private:
+    int lost;
     cQueue buffer;
     cMessage *endServiceEvent;
     simtime_t serviceTime;
@@ -36,7 +37,7 @@ void Queue::initialize() {
     //stats
     bufferSizeVector.setName("Buffer Size");
     packetDropVector.setName("Packets Lost");
-
+    lost = 0;
     buffer.setName("buffer");
     endServiceEvent = new cMessage("endService");
 }
@@ -58,10 +59,11 @@ void Queue::handleMessage(cMessage *msg) {
             scheduleAt(simTime() + serviceTime, endServiceEvent);
         }
     } else if( buffer.getLength() >= par("bufferSize").longValue() ){
-
+        lost = lost +1;
+        packetDropVector.record(lost);
         delete(msg);
         this->bubble("packet dropped");
-        packetDropVector.record(1);
+        std::cout<<lost<<endl;
 
     } else {
 
