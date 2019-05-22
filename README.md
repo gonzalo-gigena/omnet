@@ -32,9 +32,9 @@ conclusiones sobre el comportamiento de la red.
 Trabajaremos con una red constituida por tres modulos. Un nodoTx contiene por un generador y una cola, llamada cola de nodoTx. Un nodoRx formado por un sink y una cola, llamada cola del nodoRx.
 Ambos nodos estan conectados por un camino de una sola mano desde el NodoTx al NodoRx, el nodo que los conecta es otra cola que llamaremos cola de datos.
 
-![chart](./images/nodeRx.jpeg)
-![chart](./images/nodeTx.jpeg)
-![chart](./images/red.jpeg)
+![chart](./images/nodeRx.png)
+![chart](./images/nodeTx.png)
+![chart](./images/red.png)
 
 #### Fig 1. Ilustracion de la red
 
