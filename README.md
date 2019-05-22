@@ -65,10 +65,16 @@ Luego de haber analizado este caso, se ve claramente que tenemos un problema de 
 
 
 ## Algoritmo de Control de Congestion
-Explicar como funciona el algoritmo que implementamos
+Los siguientes analisis se harán sobre la misma red descripta anteriormente pero con un adicion de un canal de retorno desde el nodeRx al nodeTx para que el receptor pueda acusar información que regule la tasa de transmisión (feedback). 
+
+TODO: Explicar en que consiste el algoritmo.
 
 ### Caso de Estudio 1
+**Intervalos usados 0.1 - 0.15 - 0.175**
+
 
 ### Caso de Estudio 2
+**Intervalos usados 0.1 - 0.15 - 0.175**
+
 
 ## Conclusión
