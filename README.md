@@ -74,7 +74,7 @@ Luego de haber analizado este caso, se ve claramente que tenemos un problema de 
 
 El siguiente grafico muestra como la cola de datos y la cola de nodoRx se llenan rapidamente (linea azul) y empiezan a perder paquetes (linea roja) con un **intervalo de generación de exponential(0.1)**. Ya que los cuellos de botellas son del mismo tamaño obtenemos el mismo grafico en ambos casos.
 
-![chart](./images/default/analisis_queue_lost.png)
+![chart](./images/default/0.1/analisis_queue_lost.png)
 
 
 ## Algoritmo de Control de Congestion
