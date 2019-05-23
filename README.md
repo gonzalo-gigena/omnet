@@ -134,15 +134,25 @@ Esto se debe a que al tener diferentes intervalos de generación, mientras más 
 Con un **intervalo de generación de exponential(0.1)** se pudieron recibir el 77.9% de los paquetes totales en el receptor, mientras que se perdieron solo un 5.92% de los paquetes, Ese 5.92% de paquetes perdidos fueron en la Queue, al igual que en el caso de estudio 2 sin el algoritmo, ya que este caso tiene un problema de congestion
 A partir de ahora cada vez que nos referimos a paquetes perdidos, son los perdidos en la Queue por la congestion de la red. 
 
+A continuación podemos observar el tamaño del buffer de NodeTx(color azul), el tamaño del buffer de la Queue(color verde) y la velocidad(color rojo) a lo largo de toda la simulación.
+
+Es bastante claro cuando la red se empieza a congestionar, esto sucede al rededor del segundo 45 cuando ocurre el primer Timeout que se puede ver cuando la velociad vuelve a "cero". Cada vez que sucede esto se pierden aproximadamente
+4 paquetes, el receptor se encarga de notificarle esto al emisor a traves de la FeedBackQueue. Por otro lado el emisor tiene que disminuir la frecuencia con la que envia los paquetes, por lo tanto su buffer aumenta en tamaño cada vez que ocurre una perdida. Cuando el emisor disminuye la velocidad se puede observar como el tamaño del buffer de la Queue disminuye pero rápidamente se vuelve a llenar y se produce una nueva perdida que se repite de forma periódica. Esto se debe a que el buffer del receptor no tiene muchos paquetes por lo tanto le notifica esto al emisor, él cual duplica la velocidad hasta que ocurra un nuevo Timeout.
+
+![0.1](./images/caso2/0.1/verdequeue,rojotxspeed,azulTxbuffer.png)
+
+En el siguiente gráfico podemos observar más de cerca el comportamiento de la velocidad a lo largo de toda la simulación.
+
+![0.1](./images/caso2/0.1/speed.png)
+
 Al cambiar el **intervalo a exponential(0.15)** el 80.4% de los paquetes generados en el emisor llegaron al receptor, y solo un 3.71% de los paquetes fueron perdidos en la red. 
 
 Y por ultimo, al cambiar el intervalo a **intervalo a exponential(0.175)** vemos que no se pierde ningún paquete, ya que, gracias a la velocidad de generacion de paquetes, no se llega a saturar la red.
 
-![0.1](./images/caso2/0.1/delay.png)
-![0.1](./images/caso2/0.1/speed.png)
-![0.1](./images/caso2/0.1/verdequeue,rojotxspeed,azulTxbuffer.png)
+Aquí podemos ver el tamaño del buffer de NodeTx(color azul), el tamaño del buffer de la Queue(color verde) y la velocidad(color rojo).
 
-![0.175](./images/caso2/0.175/delay.png)
+Al ser el intervalo de generación mucho más grande que en los otros casos la cantidad de paqutes generados es pequeña por lo tanto el emisor se puede dar el lujo de enviar todos los paquetes a la máxima frecuencia que puede, de esta forma el tamaño del buffer de NodeTx es siempre chica ya que cada paqute que tiene lo envía casi de forma inmediata. Esto es gracias a que en ningún momento se satura la red, al no saturarse nunca ocurre un Timeout.
+
 ![0.175](./images/caso2/0.175/rojotx,verdeQueue,azultx.png)
 
 
