@@ -99,7 +99,11 @@ En caso de que ocurra un Timeout a la variable "speed" se le asigna el valor de 
 
 ### Caso de Estudio 1
 **Intervalos usados 0.1 - 0.15 - 0.175**
+Con un intervalo de generación de exponential(0.1) el 100% de los paquetes generados fueron recibidos por la cola de datos y procesados el nodoRx, lo cual implica que no hubo paquetes perdidos. 
+Este mismo resultado se aplica de igual manera a los demas intervalos.
 
+#### Ilustracion de estadisticas caso 1 con el algoritmo
+![chart](./images/caso1/caso_1_alg.png)
 
 ![0.1](./images/caso1/0.1/delay.png)
 ![0.1](./images/caso1/0.1/speed.png)
