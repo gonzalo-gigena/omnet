@@ -71,7 +71,9 @@ Luego de haber analizado este caso, se ve claramente que tenemos un problema de 
 
 ![chart](./images/default/chart.jpeg)
 
-#### Fig 2. Ilustracion de estadisticas
+#### Fig 1. Ilustracion de estadisticas caso 1 y caso 2
+
+![chart](./images/default/analisis_queue_lost.png)
 
 
 ## Algoritmo de Control de Congestion
