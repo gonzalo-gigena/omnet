@@ -29,7 +29,7 @@ Se simularan varios casos de estudio y obtendrán
 conclusiones sobre el comportamiento de la red.
 
 ## Analisis de una Red sin control de congestion ni flujo
-Trabajaremos con una red constituida por tres modulos (Fig 1). 
+Trabajaremos con una red constituida por tres modulos.
 
 ![chart](./images/red.png)
 
@@ -47,7 +47,7 @@ Ambos nodos estan conectados por un camino de una sola mano desde el NodoTx al N
 
 **Intervalos usados 0.1 - 0.15 - 0.175**
 
-Con un **intervalo de generación de exponential(0.1)** el 99.5% de los paquetes generados fueron recibidos del emisor a la Queue. Mientras que el 50.42% fueron procesados en el Sink, mientras que el 38.9% de los paquetes restantes fueron perdidos, debido a la falta de espacio en la cola del nodo receptor. El otro 10.68% quedaron pendientes para ser procesados.
+Con un **intervalo de generación de exponential(0.1)** el 99.5% de los paquetes generados fueron recibidos por la cola de datos. Mientras que el 50.42% fueron procesados en el Sink, mientras que el 38.9% de los paquetes restantes fueron perdidos, debido a la falta de espacio en la cola del nodo receptor. El otro 10.68% quedaron pendientes para ser procesados.
 
 Al cambiar el  **intervalo a exponential(0.15)** se generan menos paquetes por aumentar el tiempo de generacion en NodeTx. El 100% de los paquetes generados fueron enviados a la Queue, pero solo el 76.4% de los recibidos fueron procesados por el receptor. En total se perdieron 8.2% de esos paquetes de la Queue al receptor (NodeRx).
 
@@ -61,17 +61,18 @@ A medida que el intervalo de generacion aumentaba se producia una mejora de porc
 
 Antes de empezar con el análisis del caso 2, cabe recalcar que los porcentajes de los paquetes procesados, perdidos, y en cola van a ser los mismos que el caso 1, ya que los cuellos de botellas son del mismo tamaño, pero ubicados en distintas partes de la red. 
 
-Con un **intervalo de generación de exponential(0.1)** el 60.5% de los paquetes generados fueron recibidos del emisor a la Queue, a diferencia del caso 1, donde se recibieron el 99.5% de los paquetes. 
+Con un **intervalo de generación de exponential(0.1)** el 60.5% de los paquetes generados fueron recibidos por la cola de datos, a diferencia del caso 1, donde se recibieron el 99.5% de los paquetes. 
 
-Al cambiar el **intervalo a exponential(0.15)** el 91.7% de los paquetes generados fueron enviados a la Queue
+Al cambiar el **intervalo a exponential(0.15)** el 91.7% de los paquetes generados fueron enviados a la cola de datos.
 
-Por ultimo, al cambiar el intervalo a **intervalo a exponential(0.175)** vemos que no se pierde ningun paquete y que la Queue recibe todos los paquetes que se generan.
+Por ultimo, al cambiar el intervalo a **intervalo a exponential(0.175)** vemos que no se pierde ningun paquete y que la cola de datos recibe todos los paquetes que se generan.
 
-Luego de haber analizado este caso, se ve claramente que tenemos un problema de congestión, causado por un cuello de botella en la Queue, ya que procesa muy lento los paquetes que recibe, esto causa que se llene su buffer.
+Luego de haber analizado este caso, se ve claramente que tenemos un problema de congestión, causado por un cuello de botella en la cola de datos, ya que procesa muy lento los paquetes que recibe, esto causa que se llene su buffer.
 
+#### Ilustracion de estadisticas caso 1 y caso 2
 ![chart](./images/default/chart.jpeg)
 
-#### Fig 1. Ilustracion de estadisticas caso 1 y caso 2
+El siguiente grafico muestra como la cola de datos y la cola de nodoRx se llenan rapidamente (linea azul) y empiezan a perder paquetes (linea roja) con un **intervalo de generación de exponential(0.1)**. Ya que los cuellos de botellas son del mismo tamaño obtenemos el mismo grafico en ambos casos.
 
 ![chart](./images/default/analisis_queue_lost.png)
 
