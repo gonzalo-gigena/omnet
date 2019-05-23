@@ -6,7 +6,7 @@
 
 2. Composición de la Red
 
-3. Análisis del comportamiento la red basado en el tamaño sus colas
+3. Analisis de una Red sin control de congestion ni flujo
 
 	3.1 Caso de Estudio 1
 	
@@ -75,9 +75,21 @@ Luego de haber analizado este caso, se ve claramente que tenemos un problema de 
 
 
 ## Algoritmo de Control de Congestion
-Los siguientes analisis se harán sobre la misma red descripta anteriormente pero con un adicion de un canal de retorno desde el nodeRx al nodeTx para que el receptor pueda acusar información que regule la tasa de transmisión (feedback). 
+Los siguientes analisis se harán sobre la misma red descripta anteriormente pero con un adición de un canal de retorno desde el nodeRx al nodeTx para que el receptor pueda acusar información que regule la tasa de transmisión (feedback). 
 
-TODO: Explicar en que consiste el algoritmo.
+Si la red se satura comenzará a descartar paquetes, que tendrán que ser retransmitidos, lo cual puede incrementar aún más la saturación de la red. Para poder solucionar este poblema se implementó un algoritmo basado en *TCP Tahoe*, con algúnas diferencias,si bien ambos comparten que cada vez que ocurre un Timeout vuelven a arrancar de "cero" , en vez de cambiar el volumen de datos que el emisor va a enviar a continiación se modifica la frecuencia con la que se envían los paquetes. Para lograr esto se utiliza una variable denotada con el nombre de **speed**. Cuando se programa el envio del siguiente paquete obtenemos la duración del mensaje anterior (cuyo valor oscila entre 0.785 y 1), se multiplica por la variable anteriormente mencionada y el resultado va a ser el tiempo que hay que esperar para poder enviar el siguiente mensaje, es decir, mientras más grande sea el valor de "speed" menor va a ser la frecuencia con la que se envían los paquetes, de forma reciproca, mientras más chico sea el valor de "speed" mayor va a ser la frencuencia.
+
+Por otro lado el algoritmo toma en cuenta otro tipo de valores para determinar la constancia con la que se envían dichos paquete:
+
+* Si el Tamaño del buffer restante del Receptor supera el 80% se duplica la velocidad (Dividir speed por dos).
+
+* Si el Tamaño del buffer del Receptor restante se encuentra entre el 80% y el 30% speed se incrementa en 0.1.
+
+* Finalmente si el tamaño del buffer restante del Receptor es menor a 30% la velocidad se divide en dos (Multiplicar speed por dos) 
+
+En caso de que ocurra un Timeout a la variable "speed" se le asigna el valor de 30.0 que es el valor inicial cuando el algoritmo empieza.
+
+
 
 ### Caso de Estudio 1
 **Intervalos usados 0.1 - 0.15 - 0.175**
