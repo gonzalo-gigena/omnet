@@ -115,8 +115,7 @@ En caso de que ocurra un Timeout a la variable "speed" se le asigna el valor de 
 **Intervalos usados 0.1 - 0.15 - 0.175**
 
 Con un **intervalo de generación de exponential(0.1)** se pudieron recibir el 77.9% de los paquetes totales en el receptor, mientras que se perdieron solo un 5.92% de los paquetes, Ese 5.92% de paquetes perdidos fueron en la Queue, al igual que en el caso de estudio 2 sin el algoritmo, ya que este caso tiene un problema de congestion
-
-> A partir de ahora cada vez que nos referimos a paquetes perdidos, son los perdidos en la Queue por la congestion de la red 
+A partir de ahora cada vez que nos referimos a paquetes perdidos, son los perdidos en la Queue por la congestion de la red. 
 
 Al cambiar el **intervalo a exponential(0.15)** el 80.4% de los paquetes generados en el emisor llegaron al receptor, y solo un 3.71% de los paquetes fueron perdidos en la red. 
 
