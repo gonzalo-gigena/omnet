@@ -29,7 +29,18 @@ Se simularan varios casos de estudio y obtendrán
 conclusiones sobre el comportamiento de la red.
 
 ## Analisis de una Red sin control de congestion ni flujo
-Trabajaremos con una red constituida por tres modulos. Un nodoTx contiene por un generador y una cola, llamada cola de nodoTx. Un nodoRx formado por un sink y una cola, llamada cola del nodoRx.
+Trabajaremos con una red constituida por tres modulos (Fig 1). 
+
+![chart](./images/red.png)
+
+Un nodoTx contiene por un generador y una cola, llamada cola de nodoTx. 
+
+![chart](./images/nodeTx.png)
+
+Un nodoRx formado por un sink y una cola, llamada cola del nodoRx.
+
+![chart](./images/nodeRx.png)
+
 Ambos nodos estan conectados por un camino de una sola mano desde el NodoTx al NodoRx, el nodo que los conecta es otra cola que llamaremos cola de datos.
 
 ### Caso de estudio 1
@@ -60,7 +71,7 @@ Luego de haber analizado este caso, se ve claramente que tenemos un problema de 
 
 ![chart](./images/default/chart.jpeg)
 
-#### Fig 1. Ilustracion de estadisticas
+#### Fig 2. Ilustracion de estadisticas
 
 
 ## Algoritmo de Control de Congestion
