@@ -77,7 +77,10 @@ Luego de haber analizado este caso, se ve claramente que tenemos un problema de 
 
 
 ## Algoritmo de Control de Congestion
+
 Los siguientes analisis se harán sobre la misma red descripta anteriormente pero con un adición de un canal de retorno desde el nodeRx al nodeTx para que el receptor pueda acusar información que regule la tasa de transmisión (feedback). 
+
+![Network](./images/algorithm/network_with_feedback.png)
 
 Si la red se satura comenzará a descartar paquetes, que tendrán que ser retransmitidos, lo cual puede incrementar aún más la saturación de la red. Para poder solucionar este poblema se implementó un algoritmo basado en *TCP Tahoe*, con algúnas diferencias,si bien ambos comparten que cada vez que ocurre un Timeout vuelven a arrancar de "cero" , en vez de cambiar el volumen de datos que el emisor va a enviar a continiación se modifica la frecuencia con la que se envían los paquetes. Para lograr esto se utiliza una variable denotada con el nombre de **speed**. Cuando se programa el envio del siguiente paquete obtenemos la duración del mensaje anterior (cuyo valor oscila entre 0.785 y 1), se multiplica por la variable anteriormente mencionada y el resultado va a ser el tiempo que hay que esperar para poder enviar el siguiente mensaje, es decir, mientras más grande sea el valor de "speed" menor va a ser la frecuencia con la que se envían los paquetes, de forma reciproca, mientras más chico sea el valor de "speed" mayor va a ser la frencuencia.
 
@@ -97,8 +100,25 @@ En caso de que ocurra un Timeout a la variable "speed" se le asigna el valor de 
 **Intervalos usados 0.1 - 0.15 - 0.175**
 
 
+![0.1](./images/caso1/0.1/delay.png)
+![0.1](./images/caso1/0.1/speed.png)
+![0.1](./images/caso1/0.1/verderx,azuztx,speedtxrojo.png)
+
+![0.175](./images/caso1/0.175/delay.png)
+![0.175](./images/caso1/0.175/speed.png)
+![0.175](./images/caso1/0.175/rojospeedTx,azulTx,verdenodeRx.png)
+
+
+
 ### Caso de Estudio 2
 **Intervalos usados 0.1 - 0.15 - 0.175**
+
+![0.1](./images/caso2/0.1/delay.png)
+![0.1](./images/caso2/0.1/speed.png)
+![0.1](./images/caso2/0.1/verdequeue,rojotxspeed,azulTxbuffer.png)
+
+![0.175](./images/caso2/0.175/delay.png)
+![0.175](./images/caso2/0.175/rojotx,verdeQueue,azultx.png)
 
 
 ## Conclusión
