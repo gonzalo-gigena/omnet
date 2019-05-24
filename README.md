@@ -8,25 +8,29 @@
 
 3. Análisis de una Red sin control de congestión ni flujo
 
-    3.1 Caso de Estudio 1
-    
-    3.2 Caso de Estudio 2
+	3.1 Caso de Estudio 1
+
+	3.2 Caso de Estudio 2
 
 4. Algoritmo de Control de Congestion
 
-    4.1 Caso de Estudio 1
+	4.1 Caso de Estudio 1
     
-    4.2 Caso de Estudio 2
+
+	4.2 Caso de Estudio 2
 
 5. Conclusión
 
 ## Resumen
 
+En este trabajo se va a tratar de resolver uno de los tantos problemas que poseeen las redes hoy en día utilizando Omnet++ para diseñar y simular una red simple sobre la cual se va a trabajar y se propondrá un algoritmo de conrtrol de congestión.
+
 ## Introducción
-Con la existencia de las computadoras surgió la necesidad de compartir información entre las mismas, como consecuencia surgieron múltiples redes de diferentes tecnologías, tamaños (entre otros) para lograrlo. Por lo que en este análisis abarcaremos como tratar los diversos conflictos (control de flujo y congestión) que pueden aparecer en la comunicación de una red simple diseñada y simulada en Omnet++.
+
+Con la existencia de las computadoras surgió la necesidad de compartir información entre las mismas, como consecuencia surgieron múltiples redes de diferentes tecnologías, tamaños (entre otros) para lograrlo. Por lo que en este análisis abarcaremos como tratar los diversos conflictos (control de flujo y congestión) que pueden aparecer en la comunicación de una red simple.
 
 Se simularan varios casos de estudio y obtendrán
-conclusiones sobre el comportamiento de la red.
+conclusiones sobre el comportamiento de la red. En el primer caso de estudio tanto El emisor con la red y la red con el receptor tienen una conexión de 1Mbps, mientras que en el segundo caso la red y el receptor tienen una conexión de 0.5Mbps.
 
 ## Analisis de una Red sin control de congestión ni flujo
 Trabajaremos con una red constituida por tres módulos.
@@ -151,9 +155,11 @@ Al ser el intervalo de generación mucho más grande que en los otros casos la c
 ![0.175](./images/caso2/0.175/rojotx,verdeQueue,azultx.png)
 
 
-## Ilustracion de estadisticas con el algoritmo - Caso 2
+#### Ilustracion de estadisticas con el algoritmo - Caso 2
 ![2](./images/default/algoritmo-caso2.jpeg)
 
 ## Conclusión
 
-Escribir conclusion
+Si bien la red provista no es una muy buena representación de como están compuestas las redes en realidad, nos da una idea general de como funciona el algoritmo.
+
+Como pudimos observar anteriormente el algoritmo funciona, se puede ver si se comparan los resultados del caso 2 sin algoritmo y con algoritmo, en donde sin algoritmo se pierden aproximadamente el 40% de los paquetes, mientras que con el algoritmo se pierden únicamente el 5%, ya que, trata de no saturar la red constantemente. 
