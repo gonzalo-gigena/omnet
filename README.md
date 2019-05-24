@@ -103,7 +103,7 @@ A pesar de cambiar el intervalo de generación exponential por (0.15) o (0.175) 
 
 #### Ilustracion de estadisticas caso 1 
 
-![chart](./images/caso1/caso_1_alg.png)
+![1](./images/default/caso_1_alg.png)
 
 También cabe destacar que en todos los casos el gráfico que representa el tamaño del buffer de NodeTx(color azul), el tamaño del buffer de NodeRx(color verde) y la velocidad(color rojo) son idénticos. Como podemos observar en los primeros 15 segundos, aproximadamente, el buffer de NodeTx se comienza a llenar rápidamente, ya que, la frecuencia con la que envía los paquetes es considerablemente lenta, pero entre los segundos 15 y 30 la constancia con la que se envían dichos paquetes es la máxima, por lo tanto el buffer decrece velozmente.
 
@@ -150,16 +150,10 @@ Al ser el intervalo de generación mucho más grande que en los otros casos la c
 
 ![0.175](./images/caso2/0.175/rojotx,verdeQueue,azultx.png)
 
----
-## Ilustracion de estadisticas con el algoritmo - Caso 1
-![1](./images/default/caso_1_alg.png)
-
----
 
 ## Ilustracion de estadisticas con el algoritmo - Caso 2
 ![2](./images/default/algoritmo-caso2.jpeg)
 
----
-
 ## Conclusión
 
+Escribir conclusion
